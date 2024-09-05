@@ -1,0 +1,239 @@
+.dark {
+  --primary-color: rgb(6, 18, 53);
+  --secondary-color: rgb(138, 46, 226);
+  --text-color: rgb(255, 255, 225);
+  --icon-color: invert(100%) sepia(0%) saturate(0%) hue-rotate(233deg)
+    brightness(105%) contrast(102%);
+}
+
+:root {
+  --primary-color: rgb(225, 225, 225);
+  --secondary-color: rgb(138, 46, 226);
+  --text-color: rgb(22, 22, 22);
+  --icon-color: invert(6%) sepia(1%) saturate(378%) hue-rotate(314deg)
+    brightness(79%) contrast(91%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+main {
+  height: calc(100vh - 80px);
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  filter: var(--icon-color);
+}
+
+/* HEADER */
+header {
+  background-color: var(--primary-color);
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+header a {
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+
+header > .container {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.nav-and-actions {
+  display: flex;
+  gap: 24px;
+}
+
+nav > ul {
+  display: flex;
+  gap: 16px;
+  list-style-type: none;
+  align-items: center;
+  height: 100%;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  transition: all 1s;
+}
+
+.nav-divider {
+  width: 1px;
+  background-color: gray;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.actions > button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.actions > button:hover {
+  transform: scale(0.9);
+}
+
+.actions > a {
+  background-color: var(--text-color);
+  color: var(--primary-color);
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+.actions > a:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transition: all 0.5s;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+/* HERO */
+
+.hero {
+  background-color: var(--primary-color);
+  min-height: 100%;
+  display: flex;
+  padding: 64px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .container {
+  gap: 48px;
+}
+
+.hero-text {
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-text > h1 {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.hero-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.location-and-status {
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.location,
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-icon {
+  background-color: green;
+  border-radius: 100%;
+}
+
+.location > img,
+.status-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.social-links {
+  display: flex;
+  gap: 8px;
+}
+
+.social-links img {
+  color: var(--text-color);
+}
+
+.hero-image {
+  background-color: gray;
+  position: relative;
+  min-height: 360px;
+  min-width: 360px;
+}
+
+.hero-image > img {
+  border: 10px solid var(--primary-color);
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    width: 95%;
+  }
+
+  /* HEADER */
+  .nav-and-actions {
+    display: none;
+  }
+  .hamburger-menu {
+    display: flex;
+    align-items: center;
+  }
+
+  /* HERO */
+  .hero > .container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
