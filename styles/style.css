@@ -238,27 +238,6 @@ nav a:hover {
   }
 
   /* MOBILE MENU */
-  .mobile-menu {
-    box-shadow: 5px 5px 5px 5px black;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    top: 0;
-    z-index: 20;
-    /* min-height: calc(100vh - 80px); */
-    width: 80%;
-    background-color: var(--primary-color);
-  }
-
-  .mobile-menu-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 16px 0;
-    border-bottom: 1px solid gray;
-  }
-
   .overlay {
     position: absolute;
     top: 0;
@@ -270,6 +249,31 @@ nav a:hover {
     backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9;
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
+  }
+
+  .mobile-menu {
+    box-shadow: 5px 5px 5px 5px black;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    z-index: 20;
+    /* min-height: calc(100vh - 80px); */
+    width: 80%;
+    background-color: var(--primary-color);
+    animation-name: slideIn;
+    animation-duration: 0.3s;
+  }
+
+  .mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 0;
+    border-bottom: 1px solid gray;
   }
 
   .mobile-menu .container {
@@ -329,6 +333,41 @@ nav a:hover {
   }
 }
 
-@keyframes mobile-menu {
-  /* f */
+.fade-in {
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

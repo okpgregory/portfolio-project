@@ -9,6 +9,8 @@ let darkMode = localStorage.getItem("dark-mode");
 if (darkMode === null) {
   if (prefersDarkScheme) {
     localStorage.setItem("dark-mode", "enabled");
+  } else {
+    localStorage.setItem("dark-mode", "disabled");
   }
 }
 
