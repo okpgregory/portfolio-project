@@ -239,7 +239,6 @@ nav a:hover {
 
   /* MOBILE MENU */
   .mobile-menu {
-    display: block;
     box-shadow: 5px 5px 5px 5px black;
     position: fixed;
     bottom: 0;
@@ -261,7 +260,6 @@ nav a:hover {
   }
 
   .overlay {
-    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -323,6 +321,11 @@ nav a:hover {
   .hero > .container {
     flex-direction: column-reverse;
     align-items: center;
+  }
+
+  .hero-image {
+    min-height: 240px;
+    min-width: 240px;
   }
 }
 
